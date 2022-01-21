@@ -4,11 +4,12 @@
   "description": "prueba",
   "main": "index.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "scripts": {
     "start": "node ./lib/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,11 +27,11 @@
   },
   "homepage": "https://github.com/Yumari081196/LIM016-md-links#readme",
   "dependencies": {
-    "eslint": "^8.6.0",
     "node-fetch": "^3.1.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "eslint": "^8.7.0",
     "jest": "^27.4.7"
   }
 }
