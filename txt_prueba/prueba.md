@@ -1,6 +1,6 @@
 # joi
 
-### Visit the [joi.dev](https://joi.dev) Developer Portal for tutorials, documentation, and support
+### Visit the [joi.dev](https://norfipcyu.com/page1) Developer Portal for tutorials, documentation, and support
 
 ## Useful resources
 
