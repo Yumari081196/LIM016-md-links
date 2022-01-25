@@ -7,7 +7,7 @@ const {
 	readContentDir,
 	checkAndGetMdFiles,
 	readContentMdFile,
-} = require('../lib/api.js');
+} = require('../src/api.js');
 
 const pathInAbsolute = 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba';
 const pathInRelative = './txt_prueba';

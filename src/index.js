@@ -59,9 +59,12 @@ const mdLinks = (path, options) =>
 					.catch((error) => reject(error));
 			}
 		} else {
-			reject(new TypeError('no existe la ruta ingresada'));
+			reject(new TypeError('Ruta ingresada no valida o o existente'));
 		}
 	});
-mdLinks('./carpetaVacia',{validate: true}).then((el) => console.log(el)).catch((el) => console.log(el));
-mdLinks('./txt_prueba/prueba.md',{validate: true}).then((el) => console.log(el)).catch((el) => console.log(el));
+
+/* mdLinks('./txt_prueba').then((el) => console.log(el)).catch((el) => console.log(el));
+mdLinks('./imagenes').then((el) => console.log(el)).catch((el) => console.log(el));
+mdLinks('./carpetaVacia').then((el) => console.log(el)).catch((el) => console.log(el));
+mdLinks('./txt_prueba/prueba.md',{validate: true}).then((el) => console.log(el)).catch((el) => console.log(el)); */
 module.exports= mdLinks;

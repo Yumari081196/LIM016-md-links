@@ -44,17 +44,24 @@ const filterFilesMD = (listFiles) => {
 
 // Leemos la ruta ingresada y leemos sus archivos para retornar solo los archivos con extension md
 const checkAndGetMdFiles = (inputPath) => {
+	let arrayFilesMd=[];
 	// Verificamos si es un directorio, return true or false
 	if (fs.statSync(inputPath).isDirectory()) {
 		const contentDirectory = readContentDir(inputPath);
 		if (Array.isArray(contentDirectory)) {
-			return filterFilesMD(contentDirectory);
+			contentDirectory.forEach((elmntDir) =>{
+				const contentElemnt = checkAndGetMdFiles(elmntDir);
+				if(Array.isArray(contentElemnt)){
+					arrayFilesMd=arrayFilesMd.concat(contentElemnt);
+				}
+			});
+			return filterFilesMD(arrayFilesMd);
 		} else{
 			return contentDirectory;
 		}
 	}else{
-		const file = [inputPath];
-		return filterFilesMD(file);
+		arrayFilesMd.push(inputPath);
+		return filterFilesMD(arrayFilesMd);
 	}
 };
 

@@ -1,14 +1,16 @@
 {
   "name": "yumaricr-md-links",
   "version": "1.1.0",
+  "bin": {
+    "md-links": "./src/cli.js"
+  },
   "description": "prueba",
   "main": "index.js",
   "directories": {
-    "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "start": "node ./lib/index.js",
+    "start": "node ./src/index.js",
     "test": "jest --verbose --coverage",
     "pretest": "npm run eslint",
     "eslint": "eslint --ext .js test/"
@@ -23,7 +25,7 @@
     "links"
   ],
   "author": "Yumari",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Yumari081196/LIM016-md-links/issues"
   },
