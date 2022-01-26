@@ -1,81 +1,107 @@
 /* eslint-disable no-undef */
+
 const {
-	checkExistPath,
-	returnPathInAbsolute,
-	checkFile,
-	filterFilesMD,
-	readContentDir,
-	checkAndGetMdFiles,
-	readContentMdFile,
-} = require('../src/api.js');
+	validateLinks,
+	getLinks,
+	mdLinks
+} = require('../src/md-Links.js');
 
-const pathInAbsolute = 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba';
-const pathInRelative = './txt_prueba';
-describe('checkExistPath', () => {
-	it('deberia votar true o false', () => {
-		expect(checkExistPath(pathInAbsolute)).toBe(true);
+const processCwd = process.cwd();
+
+const objetosEjemplos =[
+	{
+		href: 'https://norfipcyu.com/page1',
+		text: 'Yum',
+		file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'    
+	},
+	{
+		href: 'https://joi.dev/resources/changelog/',
+		text: 'Changelog',
+		file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'    
+	},
+	{
+		href: 'https://joi.dev/policies/',
+		text: 'Project policies',
+		file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'    
+	}
+];
+const objetosEjemplos2 =[
+	{
+		href: 'https://norfipcyu.com/page1',
+		OK: 'FAIL',
+		status: 404,
+		text: 'Yum',
+		file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'    
+	},
+	{
+		href: 'https://joi.dev/resources/changelog/',
+		OK: 'OK',
+		status: 200,
+		text: 'Changelog',
+		file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'    
+	},
+	{
+		href: 'https://joi.dev/policies/',
+		OK: 'OK',
+		status: 200,
+		text: 'Project policies',
+		file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'    
+	}
+];
+
+describe('validateLinks', () => {
+	it('deberia retornar', () => {
+		return validateLinks([{href: 'https://norfipcyu.com/page1', text: 'Yum', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'}]).then((el) => {
+			expect(el).toEqual([{'OK': 'FAIL', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://norfipcyu.com/page1', 'status': 404, 'text': 'Yum'}]);
+		});
+	});
+
+	it('deberia retornar', () => {
+		return validateLinks(objetosEjemplos).then((el) => {
+			expect(el).toEqual([{'OK': 'FAIL', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://norfipcyu.com/page1', 'status': 404, 'text': 'Yum'}, {'OK': 'OK', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://joi.dev/resources/changelog/', 'status': 200, 'text': 'Changelog'}, {'OK': 'OK', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://joi.dev/policies/', 'status': 200, 'text': 'Project policies'}]);
+		});
 	});
 });
 
-describe('convertToAbsolute', () => {
-	it('deberia devolver la ruta convertida en absoluta', () => {
-		expect(returnPathInAbsolute(pathInRelative)).toBe('C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba');
+describe('getLinks',() => {
+	it('deberia retornar ', () => {
+		return getLinks([process.cwd()+'/txt_prueba/prueba.md']).then((el) => {
+			expect(el).toEqual([{'file': processCwd+'/txt_prueba/prueba.md', 'href': 'https://norfipcyu.com/page1', 'text': 'Yum'}, {'file': processCwd+'/txt_prueba/prueba.md', 'href': 'https://joi.dev/resources/changelog/', 'text': 'Changelog'}, {'file': 
+            processCwd+'/txt_prueba/prueba.md', 'href': 'https://joi.dev/policies/', 'text': 'Project policies'}]);
+		});
 	});
-	it('deberia devolver la ruta convertida en absoluta', () => {
-		expect(returnPathInAbsolute(pathInAbsolute)).toBe('C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba');
+
+	it('falla con un error', () => {
+		expect.assertions(1);
+		return getLinks('hola').catch(e => expect(e).toEqual('hola'));
 	});
+
 });
 
-describe('checkFile', () => {
-	it('deberia devolver un boleano verfiicando si es archivo o no', () => {
-		expect(checkFile('txt_prueba/prueba.md')).toBe(true);
+describe('mdLinks',() => {
+	it('deberia retornar ', () => {
+		return mdLinks('./txt_prueba/prueba.md').then((el) => {
+			expect(el).toEqual(objetosEjemplos);
+		});
 	});
+	it('falla con un error', () => {
+		expect.assertions(1);
+		return mdLinks('./carpetaVacia',{validate:true}).catch(e => expect(e).toBe('Esta carpeta esta vacía'));
+	});
+
+	it('deberia retornar ', () => {
+		return mdLinks('./txt_prueba/prueba.md',{validate:true}).then((el) => {
+			expect(el).toEqual(objetosEjemplos2);
+		});
+	});
+	it('falla con un error', () => {
+		expect.assertions(1);
+		return mdLinks('./carpetaVacia').catch(e => expect(e).toBe('Esta carpeta esta vacía'));
+	});
+
+	it('falla con un error', () => {
+		expect.assertions(1);
+		return mdLinks('./hola').catch(e => expect(e).toBe('Ruta ingresada no valida o no existente'));
+	});
+
 });
-
-describe('readContenDirectory', () => {
-	it('deberia devolver un string diciendo que eldirectorio esta vacio', () => {
-		expect(readContentDir('carpetaVacia')).toBe('Esta carpeta esta vacía');
-	});
-
-	it('deberia devolver un array con los archicos del directorio', () => {
-		expect(readContentDir('txt_prueba')).toEqual(['C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\archivoVacio.md', 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\pruebaText.txt']);
-	});
-});
-describe('filterFilesMD', () => {
-	it('deberia devolver un string diciendo que el input no contiene archivos md', () => {
-		expect(filterFilesMD(readContentDir('imagenes'))).toBe('La ruta ingresada no es(o no contiene) archivo(s) con extension .md');
-	});
-
-	it('deberia devolver un array con los archicos del directorio que tienen extension md', () => {
-		expect(filterFilesMD(readContentDir('txt_prueba'))).toEqual(['C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\archivoVacio.md', 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md']);
-	});
-});
-
-describe('checkAndGetMdFiles', () => {
-	it('deberia devolver un array con los archivos md que encuentra en el path', () => {
-		expect(checkAndGetMdFiles(pathInAbsolute)).toEqual(['C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\archivoVacio.md', 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md']);
-	});
-
-	it('deberia devolver un array con los archivos md que encuentra en el path', () => {
-		expect(checkAndGetMdFiles('C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/archivoVacio.md')).toEqual(['C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/archivoVacio.md']);
-	});
-});
-
-describe('readContentMdFile', () => {
-	it('deberia devolver un array de objetos con las caracteristas de los link', () => {
-		expect(readContentMdFile('C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/prueba.md')).toEqual([{'file': 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/prueba.md','href': 'https://norfipcyu.com/page1', 'text': 'joi.dev'}, {'file': 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/prueba.md', 'href': 'https://joi.dev/api/', 'text': 'Documentation and API'}, {'file': 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/prueba.md', 'href': 'https://joi.dev/resources/status/#joi', 'text': 'Versions status'}, { 'file': 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/prueba.md', 'href': 'https://joi.dev/resources/changelog/', 'text': 'Changelog'}, { 'file': 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/prueba.md', 'href': 'https://joi.dev/policies/', 'text': 'Project policies'}]);
-	});
-
-	it('deberia devolver un array de objetos con las caracteristas de los link', () => {
-		expect(readContentMdFile('C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links/txt_prueba/archivoVacio.md')).toEqual([]);
-	});
-});
-/* const mdLinks = require('../');
-
-describe('mdLinks', () => {
-
-  it('should...', () => {
-    console.log('FIX ME!');
-  });
-
-}); */

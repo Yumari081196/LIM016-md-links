@@ -1,3 +1,4 @@
+
 const fetch = require('node-fetch');
 
 const {
@@ -9,18 +10,38 @@ const {
 
 const validateLinks = (arrayObjects) => {
 	const newArray = arrayObjects.map((object) => {
-		return fetch(object.href).then((response) => {
-			if (response.status>=200 && response.status<400){
-				const newObject = {...object, status: response.status, OK: response.statusText };
+		return fetch(object.href)
+			.then((response) => {
+				if (response.status >= 200 && response.status < 400) {
+					const newObject = {
+						href: object.href,
+						text: object.text,
+						file: object.file,
+						status: response.status,
+						OK: response.statusText,
+					};
+					return newObject;
+				} else {
+					const newObject = {
+						href: object.href,
+						text: object.text,
+						file: object.file,
+						status: response.status,
+						OK: 'FAIL',
+					};
+					return newObject;
+				}
+			})
+			.catch(() => {
+				const newObject = {
+					href: object.href,
+					text: object.text,
+					file: object.file,
+					status: 404,
+					OK: 'FAIL',
+				};
 				return newObject;
-			}else{
-				const newObject = {...object, status: response.status, OK: 'FAIL'};
-				return newObject;
-			}
-		}).catch(() => {
-			const newObject = {...object, status: 404, OK: 'FAIL'};
-			return newObject;
-		});
+			});
 	});
 	return Promise.all(newArray);
 };
@@ -59,12 +80,8 @@ const mdLinks = (path, options) =>
 					.catch((error) => reject(error));
 			}
 		} else {
-			reject(new TypeError('Ruta ingresada no valida o o existente'));
+			reject('Ruta ingresada no valida o no existente');
 		}
 	});
 
-/* mdLinks('./txt_prueba').then((el) => console.log(el)).catch((el) => console.log(el));
-mdLinks('./imagenes').then((el) => console.log(el)).catch((el) => console.log(el));
-mdLinks('./carpetaVacia').then((el) => console.log(el)).catch((el) => console.log(el));
-mdLinks('./txt_prueba/prueba.md',{validate: true}).then((el) => console.log(el)).catch((el) => console.log(el)); */
-module.exports= mdLinks;
+module.exports = { mdLinks, getLinks, validateLinks };
