@@ -60,9 +60,9 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### JavaScript
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+- [x] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
-- [ ] **Arrays (arreglos)**
+- [x] **Arrays (arreglos)**
 
   <details><summary>Links</summary><p>
 
@@ -351,6 +351,7 @@ mdLinks("./some/dir")
   })
   .catch(console.error);
 ```
+![md-links<path>](./imagenes/md-links path.PNG)
 
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
 
