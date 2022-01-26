@@ -49,13 +49,21 @@ const objetosEjemplos2 =[
 	}
 ];
 
+
 describe('validateLinks', () => {
-	it('deberia retornar', () => {
-		return validateLinks([{href: 'https://norfipcyu.com/page1', text: 'Yum', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'}]).then((el) => {
-			expect(el).toEqual([{'OK': 'FAIL', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://norfipcyu.com/page1', 'status': 404, 'text': 'Yum'}]);
+	/* it('deberia retornar', () => {
+		var http = require('http');
+
+		http.createServer(function (req, res) {
+			res.writeHead(400, {'Content-Type': 'text/html'});
+			res.end('Hello World!');
+		}).listen(8080);
+
+		return validateLinks([{href: 'http://localhost:8080/', text: 'Yum', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md'}]).then((el) => {
+			expect(el).toEqual([{'OK': 'FAIL', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'http://localhost:8080/', 'status': 400, 'text': 'Yum'}]);
 		});
 	});
-
+ */
 	it('deberia retornar', () => {
 		return validateLinks(objetosEjemplos).then((el) => {
 			expect(el).toEqual([{'OK': 'FAIL', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://norfipcyu.com/page1', 'status': 404, 'text': 'Yum'}, {'OK': 'OK', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://joi.dev/resources/changelog/', 'status': 200, 'text': 'Changelog'}, {'OK': 'OK', 'file': 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', 'href': 'https://joi.dev/policies/', 'status': 200, 'text': 'Project policies'}]);

@@ -5,12 +5,12 @@
     "md-links": "./src/cli.js"
   },
   "description": "prueba",
-  "main": "index.js",
+  "main": "md-Links.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node ./src/md-Links.js",
     "test": "jest --verbose --coverage",
     "pretest": "npm run eslint",
     "eslint": "eslint --ext .js test/"
@@ -31,6 +31,8 @@
   },
   "homepage": "https://github.com/Yumari081196/LIM016-md-links#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
+    "figlet": "^1.5.2",
     "jsdom": "^19.0.0",
     "node-fetch": "^2.6.7",
     "showdown": "^1.9.1"
