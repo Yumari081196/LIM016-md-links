@@ -351,7 +351,7 @@ mdLinks("./some/dir")
   })
   .catch(console.error);
 ```
-![md-links-path](../imagenes/md-links path.PNG)
+![md-links-path](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/md-links%20path.PNG)
 
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
 
