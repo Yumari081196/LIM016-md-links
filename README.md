@@ -64,7 +64,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [x] **Arrays (arreglos)**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/04-arrays)
   * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
@@ -73,78 +73,78 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
   * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
   * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
+  </p></details> -->
 
-- [ ] **Objetos (key, value)**
+- [x] **Objetos (key, value)**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
-</p></details>
+  </p></details> -->
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
+- [x] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/01-conditionals-and-loops)
   * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
+  </p></details> -->
 
-- [ ] **Funciones (params, args, return)**
+- [x] **Funciones (params, args, return)**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/03-functions)
   * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/01-classic)
   * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/02-arrow)
   * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
+  </p></details> -->
 
-- [ ] **Recursión o recursividad**
+- [x] **Recursión o recursividad**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Píldora recursión - YouTube Laboratoria Developers](https://www.youtube.com/watch?v=lPPgY3HLlhQ)
   * [Recursión o Recursividad - Laboratoria Developers en Medium](https://medium.com/laboratoria-developers/recursi%C3%B3n-o-recursividad-ec8f1a359727)
-</p></details>
+  </p></details> -->
 
-- [ ] **Módulos de CommonJS**
+- [x] **Módulos de CommonJS**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Modules: CommonJS modules - Node.js Docs](https://nodejs.org/docs/latest/api/modules.html)
-</p></details>
+  </p></details> -->
 
 - [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
 
-- [ ] **Callbacks**
+- [x] **Callbacks**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-</p></details>
+  </p></details> -->
 
-- [ ] **Promesas**
+- [x] **Promesas**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
   * [How to Write a JavaScript Promise - freecodecamp (en inglés)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
-</p></details>
+  </p></details> -->
 
-- [ ] **Pruebas unitarias (unit tests)**
+- [x] **Pruebas unitarias (unit tests)**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
-</p></details>
+  </p></details> -->
 
-- [ ] **Pruebas asíncronas**
+- []  **Pruebas asíncronas**
 
   <details><summary>Links</summary><p>
 
   * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
-</p></details>
+  </p></details>
 
 - [ ] **Uso de mocks y espías**
 
@@ -155,9 +155,9 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Pruebas de compatibilidad en múltiples entornos de ejecución**
 
-- [ ] **Uso de linter (ESLINT)**
+- [x] **Uso de linter (ESLINT)**
 
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+- [x] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
 ### Node.js
 
@@ -199,28 +199,28 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### Control de Versiones (Git y GitHub)
 
-- [ ] **Git: Instalación y configuración**
+- [x] **Git: Instalación y configuración**
 
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [x] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
 
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
+- [x] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
 
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [x] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
-- [ ] **GitHub: Despliegue con GitHub Pages**
+- [x] **GitHub: Despliegue con GitHub Pages**
 
-  <details><summary>Links</summary><p>
+  <!-- <details><summary>Links</summary><p>
 
   * [Sitio oficial de GitHub Pages](https://pages.github.com/)
-</p></details>
+  </p></details> -->
 
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
+- [x] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
 
-- [ ] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
+- [x] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
 
 ### HTTP
 
-- [ ] **Consulta o petición (request) y respuesta (response).**
+- [x] **Consulta o petición (request) y respuesta (response).**
 
   <details><summary>Links</summary><p>
 
@@ -272,12 +272,17 @@ seguimiento de tu progreso.
 Dentro de cada **_milestone_** se crearán y asignarán los **_issues_** que cada quien
 considere necesarios.
 
+### Diagramas de flujo
+![Api](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/API%20diagrama.png)
+
+![Cli](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/CLI%20diagrama.png)
+
 ### Archivos del proyecto
 
 * `README.md` con descripción del módulo, instrucciones de instalación/uso,
   documentación del API y ejemplos. Todo lo relevante para que cualquier
   developer que quiera usar tu librería pueda hacerlo sin inconvenientes.
-* `index.js`: Desde este archivo debes exportar **una** función (`mdLinks`).
+* `md-links.js`: Desde este archivo debes exportar **una** función (`mdLinks`).
 * `package.json` con nombre, versión, descripción, autores, licencia,
   dependencias, scripts (pretest, test, ...), main, bin
 * `.editorconfig` con configuración para editores de texto. Este archivo no se
@@ -351,7 +356,7 @@ mdLinks("./some/dir")
   })
   .catch(console.error);
 ```
-![md-links-path](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/md-links%20path.PNG)
+![md-links](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/md-links%20cli.PNG)
 
 ### 2) CLI (Command Line Interface - Interfaz de Línea de Comando)
 
@@ -368,6 +373,7 @@ $ md-links ./some/example.md
 ./some/example.md https://otra-cosa.net/algun-doc.html algún doc
 ./some/example.md http://google.com/ Google
 ```
+![md-links-path](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/md-links%20path.PNG)
 
 El comportamiento por defecto no debe validar si las URLs responden ok o no,
 solo debe identificar el archivo markdown (a partir de la ruta que recibe como
@@ -391,6 +397,7 @@ $ md-links ./some/example.md --validate
 ./some/example.md https://otra-cosa.net/algun-doc.html fail 404 algún doc
 ./some/example.md http://google.com/ ok 301 Google
 ```
+![md-links-path-validate](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/md-links%20path%20validate.PNG)
 
 Vemos que el _output_ en este caso incluye la palabra `ok` o `fail` después de
 la URL, así como el status de la respuesta recibida a la petición HTTP a dicha
@@ -406,6 +413,7 @@ $ md-links ./some/example.md --stats
 Total: 3
 Unique: 3
 ```
+![md-links-path-stats]((https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/md-links%20path%20stats.PNG)
 
 También podemos combinar `--stats` y `--validate` para obtener estadísticas que
 necesiten de los resultados de la validación.
@@ -416,6 +424,7 @@ Total: 3
 Unique: 3
 Broken: 1
 ```
+![md-links-path-stats-validate](https://github.com/Yumari081196/LIM016-md-links/blob/main/imagenes/md-links%20path%20stats%2Cvalidate.PNG)
 
 ## 6. Entregables
 
@@ -487,7 +496,7 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 * [how-to-npm](https://github.com/workshopper/how-to-npm)
 * [promise-it-wont-hurt](https://github.com/stevekane/promise-it-wont-hurt)
 
-### Otros recursos
+<!-- ### Otros recursos
 
 * [Acerca de Node.js - Documentación oficial](https://nodejs.org/es/about/)
 * [Node.js file system - Documentación oficial](https://nodejs.org/api/fs.html)
@@ -507,7 +516,7 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 * [Leer un directorio](https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback)
 * [Path](https://nodejs.org/api/path.html)
 * [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)
-
+ -->
 ## 9. Checklist
 
 ### General
@@ -522,23 +531,23 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 
 ### API `mdLinks(path, opts)`
 
-* [ ] El módulo exporta una función con la interfaz (API) esperada.
-* [ ] Implementa soporte para archivo individual
-* [ ] Implementa soporte para directorios
-* [ ] Implementa `options.validate`
+* [x] El módulo exporta una función con la interfaz (API) esperada.
+* [x] Implementa soporte para archivo individual
+* [x] Implementa soporte para directorios
+* [x] Implementa `options.validate`
 
 ### CLI
 
-* [ ] Expone ejecutable `md-links` en el path (configurado en `package.json`)
-* [ ] Se ejecuta sin errores / output esperado
-* [ ] Implementa `--validate`
-* [ ] Implementa `--stats`
+* [x] Expone ejecutable `md-links` en el path (configurado en `package.json`)
+* [x] Se ejecuta sin errores / output esperado
+* [x] Implementa `--validate`
+* [x] Implementa `--stats`
 
 ### Pruebas / tests
 
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
+* [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
   lines, y branches.
-* [ ] Pasa tests (y linters) (`npm test`).
+* [x] Pasa tests (y linters) (`npm test`).
 
 ## 10. Achicando el problema
 
@@ -548,111 +557,3 @@ la solución del "gran proyecto". Es el equivalente a comenzar armando
 esquinas o bordes del rompecabezas/puzzle sin saber necesariamente
 cómo encajarán al final. Déjate llevar y explora.
 
-Estas son algunas sugerencias:
-
-### Empieza con un diagrama de flujo
-
-Este proyecto es distinto de los que has venido trabajando hasta ahora
-dado que no hay una interfaz web, todo se desarrollará en tu editor y
-consola/terminal.
-
-Es por ello que, para visualizar mejor lo que tendrás que hacer
-y planificar tus tareas y objetivos, es recomendable hacer un
-`diagrama de flujo`.
-
-Si nunca has hecho un diagrama de flujo revisa este [recurso](https://www.youtube.com/watch?v=Lub5qOmY4JQ).
-
-Una alternativa al diagrama de flujo puede ser el `pseudocódigo`.
-
-### Planificación
-
-En este proyecto te recomendamos usar la herramienta de planificación
-y organización de GitHub llamada **Github Projects**.
-
-Mediante **issues** y **milestones** podrás organizar y planificar
-tareas y objetivos concretos.
-
-Tomando en consideración los **entregables** del proyecto, el
-[9. Checklist](#9-checklist) y los **pasos** que definiste en tu
-`diagrama de flujo`, crea tu planificación en GitHub Projects.
-
-### Antes de codear
-
-En esta ocasión estarás trabajando en **NodeJS**, asegúrate
-de saber para qué sirve y sus consideraciones.
-
-En particular, deberás decidir desde un comienzo si usarás
-`ES Modules`, es decir, **import/export**, ó, por el contrario,
-`CommonJS Modules`, es decir, **require/module.exports**.
-
-Asegurate de tener clara esta decisión desde un inicio para
-que no encuentres problemas más adelante.
-
-### Lee un archivo
-
-Como primer reto, puedes tratar de leer un solo archivo con
-una ruta fija e imprimir su contenido en la consola con un `console.log`.
-
-La librería nativa `FS` (FileSystem) te será de utilidad.
-
-### Averigua la extensión de un archivo
-
-Ya sabiendo leer un archivo, aventúrate a conocer cual
-es su extensión.
-
-Recuerda, las extensiones son esas letras al final del
-nombre de un archivo, por ejemplo: .js, .txt, .doc, etc
-
-Aquí también podrá ser útil `FS`.
-
-### Obtén el contenido de un directorio
-
-Este proyecto consiste en buscar archivos, pero para eso,
-primero debes poder verlos.
-
-Intenta imprimir en consola la lista de archivos en una carpeta.
-
-La librería `FS` también te será útil aquí.
-
-### Une dos rutas
-
-Para poder acceder a carpetas y archivos será necesario que
-indiques en qué lugar de tu computadora se encuentran, a esto
-le llamamos **rutas**.
-
-Usa la librería nativa `path` para unir dos segmentos de ruta,
-por ejemplo, si queremos unir:
-
-1) /home/Laboratoria/
-2) ./test
-
-El resultado sería: /home/Laboratoria/test
-
-### Recursividad
-
-Este proyecto se ha de resolver de forma casi natural con
-**recursividad**.
-
-¿Por qué?.
-
-Porque no conocemos realmente cuantas carpetas y archivos
-tendremos que recorrer antes de terminar.
-
-Si recibes una ruta de carpeta, no sabrás de ante mano si
-dentro hay más carpetas o muchos archivos.
-
-Por ello, asegurate bien de entender de qué trata la
-recursividad y ver algunos ejemplos.
-
-Entre los recursos de este proyecto hay un video que te ayudará.
-
-### Crea una promesa
-
-El valor de retorno de nuestra librería es una `Promesa`,
-no un `Array`.
-
-Prueba leyendo sobre las promesas y creando una por tu
-cuenta utilizando **new Promise()**
-
-Es importante que sepas qué es un **callback** pues las
-promesas los utilizarán.
