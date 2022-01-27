@@ -18,78 +18,79 @@ const checkFile = (input) => fs.statSync(input).isFile();
 
 // Leyendo archivos de una carpeta
 const readContentDir = (directory) => {
-	const content = fs.readdirSync(directory);
-	if (content.length === 0) {
-		return 'Esta carpeta esta vacía';
-	}else{
-		const arrayContent = [];
-		content.forEach((element) => {
-			arrayContent.push(path.resolve(directory, element));
-		});
-		return arrayContent;
-	}
+  const content = fs.readdirSync(directory);
+  if (content.length === 0) {
+    return 'Esta carpeta esta vacía';
+  }
+  const arrayContent = [];
+  content.forEach((element) => {
+    arrayContent.push(path.resolve(directory, element));
+  });
+  return arrayContent;
 };
 
 // filtrar archivos md
 const filterFilesMD = (listFiles) => {
-	const arrayFilesMd = listFiles.filter(
-		(element) => path.extname(element) === '.md',
-	);
-	if (arrayFilesMd.length === 0) {
-		return 'La ruta ingresada no es(o no contiene) archivo(s) con extension .md';
-	}else{
-		return arrayFilesMd;
-	}
+  const arrayFilesMd = listFiles.filter(
+    (element) => path.extname(element) === '.md',
+  );
+  if (arrayFilesMd.length === 0) {
+    return 'La ruta ingresada no es(o no contiene) archivo(s) con extension .md';
+  }
+  return arrayFilesMd;
 };
 
-// Leemos la ruta ingresada y leemos sus archivos para retornar solo los archivos con extension md
+// Leemos la ruta ingresada y leemos sus elementos para retornar solo los archivos con extension md
 const checkAndGetMdFiles = (inputPath) => {
-	let arrayFilesMd=[];
-	// Verificamos si es un directorio, return true or false
-	if (fs.statSync(inputPath).isDirectory()) {
-		const contentDirectory = readContentDir(inputPath);
-		if (Array.isArray(contentDirectory)) {
-			contentDirectory.forEach((elmntDir) =>{
-				const contentElemnt = checkAndGetMdFiles(elmntDir);
-				if(Array.isArray(contentElemnt)){
-					arrayFilesMd=arrayFilesMd.concat(contentElemnt);
-				}
-			});
-			return filterFilesMD(arrayFilesMd);
-		} else{
-			return contentDirectory;
-		}
-	}else{
-		arrayFilesMd.push(inputPath);
-		return filterFilesMD(arrayFilesMd);
-	}
+  let arrayFilesMd = [];
+  // Verificamos si es un directorio, return true or false
+  if (fs.statSync(inputPath).isDirectory()) {
+    const contentDirectory = readContentDir(inputPath); // esto retorna un mensaje si esta vacio
+    // Verificamos si tiene elementos o no
+    if (Array.isArray(contentDirectory)) {
+      contentDirectory.forEach((elmntDir) => {
+        const contentElemnt = checkAndGetMdFiles(elmntDir);
+        if (Array.isArray(contentElemnt)) {
+          arrayFilesMd = arrayFilesMd.concat(contentElemnt);
+        }
+      });
+      return filterFilesMD(arrayFilesMd);
+    }
+    return contentDirectory;
+  }
+  arrayFilesMd.push(inputPath);
+  return filterFilesMD(arrayFilesMd);
 };
 
 const converter = new showdown.Converter();
 
 const readContentMdFile = (inputFile) => {
-	const contentFile = fs.readFileSync(inputFile).toString();
-	// leeremos contenido del archivo md
-	const contentHTML = converter.makeHtml(contentFile);
-	const dom = new JSDOM(contentHTML);
-	const arrayOfTagsA = dom.window.document.querySelectorAll('a');
-	const arrNew = [];
-	arrayOfTagsA.forEach((elem) => {
-		arrNew.push({
-			href: elem.href,
-			text: elem.textContent.slice(0, 50),
-			file: inputFile,
-		});
-	});
-	return arrNew;
+  // leeremos contenido del archivo md
+  const contentFile = fs.readFileSync(inputFile).toString();
+  // Transformamos el contenido en entrada html
+  // los links contenido en los archivos .md se convertiran en etiquetas de ancla
+  const contentHTML = converter.makeHtml(contentFile);
+  // Una vez encapsulado todo en etiquetas de html lo convertimos en documento HTML
+  const dom = new JSDOM(contentHTML);
+
+  const arrayOfTagsA = dom.window.document.querySelectorAll('a');
+  const arrNew = [];
+  arrayOfTagsA.forEach((elem) => {
+    arrNew.push({
+      href: elem.href,
+      text: elem.textContent.slice(0, 50),
+      file: inputFile,
+    });
+  });
+  return arrNew;
 };
 
 module.exports = {
-	checkExistPath,
-	returnPathInAbsolute,
-	checkFile,
-	checkAndGetMdFiles,
-	filterFilesMD,
-	readContentDir,
-	readContentMdFile,
+  checkExistPath,
+  returnPathInAbsolute,
+  checkFile,
+  checkAndGetMdFiles,
+  filterFilesMD,
+  readContentDir,
+  readContentMdFile,
 };
