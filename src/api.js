@@ -64,9 +64,9 @@ const checkAndGetMdFiles = (inputPath) => {
 
 const converter = new showdown.Converter();
 
-const readContentMdFile = (inputFile) => {
+const readContentMdFile = (inputPathFile) => {
   // leeremos contenido del archivo md
-  const contentFile = fs.readFileSync(inputFile).toString();
+  const contentFile = fs.readFileSync(inputPathFile).toString();
   // Transformamos el contenido en entrada html
   // los links contenido en los archivos .md se convertiran en etiquetas de ancla
   const contentHTML = converter.makeHtml(contentFile);
@@ -79,7 +79,7 @@ const readContentMdFile = (inputFile) => {
     arrayInfoLinks.push({
       href: element.href,
       text: element.textContent.slice(0, 50),
-      file: inputFile,
+      file: inputPathFile,
     });
   });
   return arrayInfoLinks;
