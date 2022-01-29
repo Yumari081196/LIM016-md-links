@@ -74,15 +74,15 @@ const readContentMdFile = (inputFile) => {
   const dom = new JSDOM(contentHTML);
 
   const arrayOfTagsA = dom.window.document.querySelectorAll('a');
-  const arrNew = [];
-  arrayOfTagsA.forEach((elem) => {
-    arrNew.push({
-      href: elem.href,
-      text: elem.textContent.slice(0, 50),
+  const arrayInfoLinks = [];
+  arrayOfTagsA.forEach((element) => {
+    arrayInfoLinks.push({
+      href: element.href,
+      text: element.textContent.slice(0, 50),
       file: inputFile,
     });
   });
-  return arrNew;
+  return arrayInfoLinks;
 };
 
 module.exports = {
