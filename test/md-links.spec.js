@@ -10,17 +10,17 @@ const objetosEjemplos = [
   {
     href: 'https://norfipcyu.com/page1',
     text: 'Yum',
-    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
+    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
   },
   {
     href: 'https://joi.dev/resources/changelog/',
     text: 'Changelog',
-    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
+    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
   },
   {
     href: 'https://joi.dev/policies/',
     text: 'Project policies',
-    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
+    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
   },
 ];
 const objetosEjemplos2 = [
@@ -29,32 +29,32 @@ const objetosEjemplos2 = [
     OK: 'FAIL',
     status: 404,
     text: 'Yum',
-    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
+    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
   },
   {
     href: 'https://joi.dev/resources/changelog/',
     OK: 'OK',
     status: 200,
     text: 'Changelog',
-    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
+    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
   },
   {
     href: 'https://joi.dev/policies/',
     OK: 'OK',
     status: 200,
     text: 'Project policies',
-    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
+    file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md',
   },
 ];
 
 describe('validateLinks', () => {
   it('deberia retornar', () => validateLinks(objetosEjemplos).then((el) => {
     expect(el).toEqual([{
-      OK: 'FAIL', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', href: 'https://norfipcyu.com/page1', status: 404, text: 'Yum',
+      OK: 'FAIL', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', href: 'https://norfipcyu.com/page1', status: 404, text: 'Yum',
     }, {
-      OK: 'OK', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', href: 'https://joi.dev/resources/changelog/', status: 200, text: 'Changelog',
+      OK: 'OK', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', href: 'https://joi.dev/resources/changelog/', status: 200, text: 'Changelog',
     }, {
-      OK: 'OK', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', href: 'https://joi.dev/policies/', status: 200, text: 'Project policies',
+      OK: 'OK', file: 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba\\prueba.md', href: 'https://joi.dev/policies/', status: 200, text: 'Project policies',
     }]);
   }));
 });

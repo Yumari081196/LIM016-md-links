@@ -83,5 +83,6 @@ if (argumentos.length === 2) { // cuando solo ingresemos md-links en la terminal
     console.log(new TypeError('No valid options'));
   }
 } else {
+  console.log(argumentos);
   console.log(chalk.bold.white.bgRed('No valid arguments in the terminal'));
 }

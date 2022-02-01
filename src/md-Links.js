@@ -78,5 +78,9 @@ const mdLinks = (path, options) => new Promise((resolve, reject) => {
     reject('Ruta ingresada no valida o no existente');
   }
 });
-
+// entrada de la ruta
+/* mdLinks('c:/Users/Cruz/Desktop/alexa/CodigosJs,Html,Css/cifradoCesar/CipherLaboratoria')
+  .then((el) => {
+    console.log(el);
+  }).catch((el) => console.log(el)); */
 module.exports = { mdLinks, getLinks, validateLinks };

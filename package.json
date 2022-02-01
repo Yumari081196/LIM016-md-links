@@ -2,7 +2,7 @@
   "name": "yumaricr-md-links",
   "version": "1.1.0",
   "bin": {
-    "md-links": "./src/cli.js"
+    "md-links": "src/cli.js"
   },
   "description": "prueba",
   "main": "md-Links.js",

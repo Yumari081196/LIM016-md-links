@@ -8,10 +8,10 @@ const {
   readContentMdFile,
 } = require('../src/api');
 
-const processCwdInput = 'C:/Users/Cruz/Desktop/alexa/Codigos Js , Html, Css/cifradoCesar/md_links/LIM016-md-links';
-const processCwdRecvd = 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links';
+const processCwdInput = 'C:/Users/Cruz/Desktop/alexa/CodigosJs,Html,Css/cifradoCesar/md_links/LIM016-md-links';
+const processCwdRecvd = 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links';
 
-const pathInAbsolute = 'C:\\Users\\Cruz\\Desktop\\alexa\\Codigos Js , Html, Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba';
+const pathInAbsolute = 'C:\\Users\\Cruz\\Desktop\\alexa\\CodigosJs,Html,Css\\cifradoCesar\\md_links\\LIM016-md-links\\txt_prueba';
 const pathInRelative = './txt_prueba';
 
 describe('checkExistPath', () => {
